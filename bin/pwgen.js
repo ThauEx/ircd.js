@@ -1,9 +1,11 @@
 #!/usr/bin/env node
-var ircd = require(__dirname + '/../lib/ircd');
-ircd.hash(process.argv[2], function(err, hash) {
+
+const ircd = require(__dirname + '/../lib/ircd');
+
+ircd.hash(process.argv[2], (err, hash) => {
   if (err) {
     throw(err);
-  } else {
-    console.log(hash);
   }
+
+  console.log(hash);
 });
